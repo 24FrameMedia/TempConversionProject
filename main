@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    
+	char selection{};
+	double fDegrees{};
+	double cDegrees{};
+	double fConverted{};
+	double cConverted{};
+	
+	while (selection != 'Q' && selection != 'q'){
+		cout << "What type of temperature do you need to convert?" << endl << endl;
+		
+		cout<< "F - Fahrenheit" << endl << "C - Celsius" << endl << endl << "Q - Quit" << endl;
+		
+		cin >> selection;
+		
+		if (selection == 'F' || selection == 'f'){
+			cout << "Enter degrees in Fahrenheit to convert to Celsius: ";
+			cin >> fDegrees;
+			fConverted = ((fDegrees - 32.0) * (5.0/9.0));
+			cout << fixed << setprecision(1);
+			cout << fDegrees << " in Celsius is: " << fConverted << endl;
+		}else if (selection == 'C' || selection == 'c'){
+			cout << "Enter degrees in Celsius to convert to Fahrenheit: ";
+			cin >> cDegrees;
+			cConverted = (cDegrees * (9.0/5.0) + 32.0);
+			cout << fixed << setprecision(1);
+			cout << cDegrees << " in Fahrenheit is: " << cConverted << endl;
+		}else{
+			cout << "Invalid selection - Please select F or C" << endl;
+		}
+			
+	}
+}
